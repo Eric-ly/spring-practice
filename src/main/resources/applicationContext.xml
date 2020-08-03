@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Repository and Service layers -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean id="student1" class="com.example.spring_mvc_test.model.Student">
+		<property name="id" value="1"/>
+		<property name="name" value="student-happy"/>
+	</bean>
+	<bean id="class1" class="com.example.spring_mvc_test.model.ClassModel">
+		<property name="students">
+			<list>
+				<ref bean="student1"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="personA" class="com.example.spring_mvc_test.model.PersonA"></bean>
+	<bean id="check" class="com.example.spring_mvc_test.service.Service"></bean>
+
+	<bean id = "applicationRefreshedEvent" class="com.example.spring_mvc_test.listener.ApplicationRefreshEvent"/>
+
+</beans>
